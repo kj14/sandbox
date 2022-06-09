@@ -1,3 +1,81 @@
+# sandbox
+
+---
+## local
+
+### git clone
+
+```shell
+git clone git@github.com:kj14/sandbox.git
+```
+
+### cd
+```shell
+cd sandbox
+```
+
+### composer install
+
+```shell
+docker run --rm \
+    -u "$(id -u):$(id -g)" \
+    -v $(pwd):/var/www/html \
+    -w /var/www/html \
+    laravelsail/php81-composer:latest \
+    composer install --ignore-platform-reqs
+```
+
+### .env
+
+```shell
+cp .env.example .env
+```
+
+### Sail START
+
+```shell
+sail up -d
+```
+
+### workspace
+
+```shell
+sail shell
+```
+
+### migrateion
+
+```shell
+php artisan migrate
+```
+
+### generate key
+
+```shell
+php artisan key:generate
+```
+
+### vue build
+
+```shell
+npm ci
+npm run watch
+```
+
+### exit workspace
+
+```shell
+exit
+```
+
+### Sail STOP
+
+```shell
+sail stop
+```
+
+----
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
