@@ -23,9 +23,16 @@ Route::get('/', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 });
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/dashboard', function () {
+        return Inertia::render('Dashboard');
+    })->name('dashboard');
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+    Route::get('/chart', function () {
+        return Inertia::render('Chart/Index');
+    })->name('chart');
+});
 
-require __DIR__.'/auth.php';
+
+
+require __DIR__ . '/auth.php';
