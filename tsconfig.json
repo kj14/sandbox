@@ -12,6 +12,8 @@
         "baseUrl": ".",
         "typeRoots": ["./resources/js/@types"],
         "lib": ["esnext", "dom", "dom.iterable", "scripthost"],
+        "allowJs": true,
+        "outDir": ""
     },
     "include": [
         "resources/js/**/*.ts",
